@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Geral
+Route::get('/', 'AppController@estados');
+
+//Cliente
+Route::post('cadastrado', 'ClienteController@addCliente')->name('cliente_add');
+
+Route::get('listar/clientes', 'ClienteController@listarCliete')->name('list_cliente');
